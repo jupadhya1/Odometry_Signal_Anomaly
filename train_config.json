@@ -1,0 +1,74 @@
+{
+    "training": {
+        "anomaly": {
+            "model": {
+                "IsolationForest": true,
+                "EllipticEnvelope": false
+            },
+            "model_params": {
+                "IsolationForest": {
+                    "n_estimators": 1000,
+                    "contamination": 0
+                },
+                "EllipticEnvelope": {
+                    "contamination": 0.1
+                }
+            },
+            "data": {
+                "bucket": "odometryclassification",
+                "features_dir": "features/4024",
+                "file_path": null,
+                "index_col": "Unnamed: 0",
+                "vehicle_id": null,
+                "test_ratio": 0.2,
+                "metrics_nsteps": 10,
+                "nominal_sample_frac": 1,
+                "nominal_feature_name": "is_nominal"
+            }
+        },
+        "odometry": {
+            "Dnn": {
+                "optimizer": "Adam",
+                "learning_rate": 0.001,
+                "loss_weight": 1.0,
+                "loss": "sparse_categorical_crossentropy",
+                "epochs": 2,
+                "verbose": 1
+            },
+            "data": {
+                "bucket": "odometryclassification",
+                "features_dir": "features",
+                "feedback_file_path": null,
+                "index_col": "Unnamed: 0",
+                "validation_split": 0.3,
+                "seed": 2020,
+                "label_columns": ["Axle Event", "Odo Algo Issue", "Speed Estimation"],
+                "vehicle_id": null,
+                "nominal_feature_name": "is_nominal"
+            }
+        }
+    },
+    "artifacts": {
+        "minio": {
+            "access_key": "mobilityodometry",
+            "secret_key": "0abaZw+BOFtrAD+tLH/kYGoX7ljpNa38/BMKBakSYD8jufmvb18RWDhcqxo1hjPG504eAr9ejBmOqL7Je1peQQ==",
+            "endpoint_url": "https://raw-data-storage.mobility-odometry.smart-mobility.alstom.com",
+            "region_name": null,
+            "secure": true
+        },
+        "mlflow": {
+            "endpoint": "http://mlflow.mobility-odometry.smart-mobility.alstom.com",
+            "username": "mlflow",
+            "password": "jei7viphoo4Kae&j"
+        },
+        "openfaas": {
+            "gateway": "https://openfaasgw.mobility-odometry.smart-mobility.alstom.com",
+            "username": "openfaasgw",
+            "password": "tahj:i4jae3Reemo",
+            "version": 1.0
+        },
+        "nifi": {
+            "host": "http://nifi.default.svc.cluster.local:8080/nifi-api"
+        }
+    }
+}

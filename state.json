@@ -1,0 +1,11 @@
+{
+    "6067": {
+        "epochs": 5,
+        "completed_epoch": 5,
+        "run_level": {
+            "Training": "COMPLETED",
+            "AggregateMetrics": "COMPLETED",
+            "Deployment": "COMPLETED"
+        }
+    }
+}

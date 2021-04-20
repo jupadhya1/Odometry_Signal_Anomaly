@@ -1,0 +1,15 @@
+boto3==1.17.10
+minio==7.0.2
+mlflow==1.8.0
+numpy==1.19.5
+pandas==1.1.5
+tqdm
+matplotlib
+ipywidgets
+jupyter
+SQLAlchemy
+scikit-learn==0.24.1
+psycopg2-binary
+tensorflow>=2.4.1
+openpyxl
+nipyapi
